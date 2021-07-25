@@ -21,6 +21,7 @@ function App() {
 
   useEffect(() => {
     document.title = capitalizeFirstLetter(currentCategory.name);
+   // document.title = currentCategory.name;
   }, [currentCategory]);
 
 
