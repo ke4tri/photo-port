@@ -1,5 +1,6 @@
 //import logo from './logo.svg';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { capitalizeFirstLetter } from '../src/utils/helpers';
 import About from './components/About';
 import Nav from './components/Nav';
 import Gallery from "./components/Gallery";
@@ -17,6 +18,11 @@ function App() {
   ]);
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
+
+  useEffect(() => {
+    document.title = capitalizeFirstLetter(currentCategory.name);
+  }, [currentCategory]);
+
 
   return (
     <div>
