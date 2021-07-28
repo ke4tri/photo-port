@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 //import Modal from '../Modal';
 
+
 // const PhotoList = ({ category }) => {
   function PhotoList({category}){
  // console.log(category);
@@ -118,8 +119,8 @@ import React, { useState } from 'react';
         {currentPhotos.map((image, i) => (
           
           <img
-           src={(`../assets/small/${name}/${i}.jpg`)}
-          
+            src={require(`../assets/small/${name}/${i}.jpg`)}
+           // src={require('../assets/small/commercial/0.jpg')}
             alt={image.name}
             className="img-thumbnail mx-1"
             key={image.name}
