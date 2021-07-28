@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 
 // const PhotoList = ({ category }) => {
   function PhotoList({category}){
-  console.log(category);
-  //const { name, description } = category;
-  console.log(category.name)
+ // console.log(category);
+  const { name, description } = category;
+
+  const newName = name.replace(/['"]+/g, '');
+
 
   const [photos] = useState([
     {
@@ -105,8 +107,10 @@ import React, { useState } from 'react';
     },
   ]);
 
-  const currentPhotos = photos.filter((photo) => photo.category === category);
-
+  console.log(category);
+  const currentPhotos = photos.filter((photo) => photo.category === category.name);
+   console.log('currentPhots : ' + currentPhotos);
+  
   return (
     <div>
       <div className="flex-row">
@@ -114,7 +118,8 @@ import React, { useState } from 'react';
         {currentPhotos.map((image, i) => (
           
           <img
-           src={require(`../assets/small/${category}/${i}.jpg`)}
+           src={(`../assets/small/${name}/${i}.jpg`)}
+          
             alt={image.name}
             className="img-thumbnail mx-1"
             key={image.name}
