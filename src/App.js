@@ -4,6 +4,7 @@ import { capitalizeFirstLetter } from '../src/utils/helpers';
 import About from './components/About';
 import Nav from './components/Nav';
 import Gallery from "./components/Gallery";
+import ContactForm from "./components/Contact";
 import './App.css';
 
 function App() {
@@ -33,10 +34,10 @@ function App() {
         currentCategory={currentCategory}
       ></Nav>
       <main>
-        <div>
-        <Gallery currentCategory={currentCategory}></Gallery>
-          <About></About>
-        </div>
+      <ContactForm />
+         <Gallery currentCategory={currentCategory}/>
+          <About />
+  
       </main>
     </div>
   );
