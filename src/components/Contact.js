@@ -1,17 +1,20 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-const [formState, setFormState] = useState({name: '', email: '', message: ''});
-const {name, email, message} = formState;
+
+
 function ContactForm(){
-
+    const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+    const {name, email, message} = formState;
+    function handleChange(e) {
+        setFormState({...formState, name: e.target.value })
+      }
+      
     return (
         <section>
-
-
           <form id="contact-form">
             <div>
               <label htmlFor="name">Name:</label>
-              <input type="text" name="name" />
+              <input type="text" defaultValue={name} onChange={handleChange} name="name" />
             </div>
             <div>
               <label htmlFor="email">Email address:</label>
