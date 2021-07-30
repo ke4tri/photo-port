@@ -28,7 +28,10 @@ function ContactForm(){
             }
           }
           console.log('errorMessage', errorMessage);
-        setFormState({...formState, [e.target.name]: e.target.value })
+        if(!errorMessage){
+            setFormState({...formState, [e.target.name]: e.target.value })
+        }
+       
  
     }
       console.log(formState);
@@ -46,13 +49,17 @@ function ContactForm(){
             </div>
             <div>
               <label htmlFor="email">Email address:</label>
-              <input type="email" defaultValue={email} name="email" onChange={handleChange} />
+              <input type="email" defaultValue={email} name="email" onBlur={handleChange} />
 
             </div>
             <div>
               <label htmlFor="message">Message:</label>
               <textarea name="message" defaultValue={message} onChange={handleChange} rows="5" />
-
+              {errorMessage && (
+                    <div>
+                        <p className="error-text">{errorMessage}</p>
+                    </div>
+                )}
             </div>
             <button type="submit">Submit</button>
           </form>
