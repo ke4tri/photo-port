@@ -34,11 +34,21 @@ function App() {
         categories={categories}
         setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}
+        contactSelected={contactSelected}
+        setContactSelected={setContactSelected}
       ></Nav>
       <main>
-      <ContactForm />
+      {/* <ContactForm />
          <Gallery currentCategory={currentCategory}/>
-          <About />
+          <About /> */}
+          {!contactSelected ? (
+  <React.Fragment>
+    <Gallery currentCategory={currentCategory}></Gallery>
+    <About></About>
+  </React.Fragment>
+) : (
+    <ContactForm></ContactForm>
+  )}
   
       </main>
     </div>
