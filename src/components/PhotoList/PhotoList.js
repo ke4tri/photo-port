@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from './Modal';
+import Modal from '../Modal/Modal';
 
 
 // const PhotoList = ({ category }) => {
@@ -123,7 +123,7 @@ import Modal from './Modal';
         {currentPhotos.map((image, i) => (
           
           <img
-            src={require(`../assets/small/${name}/${i}.jpg`)}
+            src={require(`../../assets/small/${name}/${i}.jpg`)}
             alt={image.name}
             className="img-thumbnail mx-1"
              onClick={() => toggleModal(image, i)}

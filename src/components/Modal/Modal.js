@@ -11,7 +11,7 @@ function Modal({onClose, currentPhoto}) {
                     {console.log(`name : ${currentPhoto.name}`)}
                     {console.log(`category :  ${currentPhoto.category}`)}
                     <h3 className="modalTitle">{name}</h3>
-                    <img src={require(`../assets/large/${category}/${index}.jpg`)} alt="current category" />
+                    <img src={require(`../../assets/large/${category}/${index}.jpg`)} alt="current category" />
                     {/* <img src={require(`../assets/large/commercial/0.jpg`)} alt="current category" /> */}
                     <p>
                     Photo Description
