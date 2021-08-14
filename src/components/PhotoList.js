@@ -111,19 +111,19 @@ import Modal from './Modal';
  
   const toggleModal = (image, i) => {
     setCurrentPhoto({...image, index: i});
-    setIsModalOpen(true);
+    // setIsModalOpen(true);
+    setIsModalOpen(!isModalOpen);
   }
-  console.log(`PhotoList currentPhotos : ${currentPhoto}`)
+
   return (
     <div>
-      {isModalOpen && <Modal currentPhoto={currentPhoto}/>}
+      {isModalOpen && <Modal currentPhoto={currentPhoto} onClose={toggleModal}/>}
       <div className="flex-row">
   
         {currentPhotos.map((image, i) => (
           
           <img
             src={require(`../assets/small/${name}/${i}.jpg`)}
-           // src={require('../assets/small/commercial/0.jpg')}
             alt={image.name}
             className="img-thumbnail mx-1"
              onClick={() => toggleModal(image, i)}
