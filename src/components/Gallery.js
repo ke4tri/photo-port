@@ -1,6 +1,6 @@
 import React from 'react';
 import { capitalizeFirstLetter } from '../../src/utils/helpers'
-import PhotoList from './PhotoList'
+import PhotoList from './PhotoList/PhotoList'
 
 
 function Gallery({ currentCategory }) {
