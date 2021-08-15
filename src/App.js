@@ -6,7 +6,7 @@ import About from './components/About';
 import Nav from './components/Nav';
 import Gallery from "./components/Gallery";
 import ContactForm from "./components/Contact";
-import './App.css';
+import './index.css';
 
 function App() {
  

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-//import { render, cleanup } from '@testing-library/react';
+//import '@testing-library/jest-dom';
 import About from '..';
 
 afterEach(cleanup);
@@ -14,9 +14,10 @@ afterEach(cleanup);
       });
   
     // Second Test
-    it('matches snapshot DOM node structure', () => {
-        // render About
-        const { asFragment } = render(<About />);
-        expect(asFragment()).toMatchSnapshot();
-      });
+    it('matches snapshot', () => {
+      const { asFragment } = render(<About />);
+    
+      expect(asFragment()).toMatchSnapshot();
+    });
+
   });
