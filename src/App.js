@@ -1,3 +1,4 @@
+
 //import logo from './logo.svg';
 import React, { useState, useEffect } from "react";
 import { capitalizeFirstLetter } from '../src/utils/helpers';
@@ -5,7 +6,7 @@ import About from './components/About';
 import Nav from './components/Nav';
 import Gallery from "./components/Gallery";
 import ContactForm from "./components/Contact";
-import './App.css';
+import './index.css';
 
 function App() {
  
@@ -50,6 +51,7 @@ function App() {
     <ContactForm></ContactForm>
   )}
   
+
       </main>
     </div>
   );
